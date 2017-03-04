@@ -1,0 +1,20 @@
+<div class="row">
+
+	<div class="lb-row-cureve" ng-style="{'height': (vm.group.instances.length * 100) + 'px'}">
+		<div class="row midle-height" ng-if="vm.group.fromGroup"
+				 ng-style="{'top': ((vm.group.instances.length - 1) * 50 + 15) + 'px'}">
+			<div class="col-xs-5 inline-block lb-group-name">
+				<b>{{vm.group.region}}</b>
+				<div>{{vm.group.totalRPS | number:2}}</div>
+			</div>
+
+			<div class="col-xs-7 inline-block no-padding lb-group-cureves">
+				<cureves series="vm.group.instances" max-rps="vm.maxRps"></cureves>
+			</div>
+		</div>
+	</div>
+
+	<div class="lb-row-data">
+		<div ng-include="'app/components/lbDistribution/lbDistributionRow.html'"></div>
+	</div>
+</div>

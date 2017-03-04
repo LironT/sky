@@ -1,0 +1,29 @@
+{
+	"NAV_BAR": {
+		"NAME": "http-collector-lb",
+		"EDIT": "Edit",
+		"TABS": {
+			"DETAILS": "Details",
+			"MONITORING": "Monitoring",
+			"CACHING": "Caching"
+		}
+	},
+	"RPS": {
+		"BACKEND": "Backend",
+		"LB_NAME": "http-collector-lb-backend-service"
+	},
+	"LB": {
+		"FRONTEND_LOCATION": "Frontend Location",
+		"TOTAL_TRAFFIC": "(total inboubd traffic)",
+		"BACKEND": "Backend",
+		"MINUTES_AGO": "minutes ago",
+		"MAX": "Max",
+		"DRAINED_TO": "Capacity is drained to",
+		"OF": "of",
+		"INSTANCE_HEALTHY": "instance healthy",
+		"NO_INSTANCE": "No instances configured",
+		"EDIT": "Edit",
+		"CPU_UTILIZATION": "CPU Utilization",
+		"RATE": "Rate"
+	}
+}

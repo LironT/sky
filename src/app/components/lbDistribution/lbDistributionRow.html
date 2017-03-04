@@ -1,0 +1,30 @@
+<div class="lb-distribution-row row" ng-repeat="instance in vm.group.instances">
+	<div class="col-xs-4 no-padding">
+		<div ng-if="instance.color" class="lb-name-square" ng-style="{'background-color': instance.color}"></div>
+		<b>{{instance.lbName}}</b>
+		<div>{{instance.name}}</div>
+	</div>
+	<div class="col-xs-3 no-padding">
+		<span ng-if="instance.totalAmount > 0">
+			{{instance.healthyAmount}} {{'LB.OF' | translate}} {{instance.totalAmount}} {{'LB.INSTANCE_HEALTHY' | translate}}
+		</span>
+		<span ng-if="instance.totalAmount === 0">
+			{{'LB.NO_INSTANCE' | translate}} <a>{{'LB.EDIT' | translate}}</a>
+		</span>
+	</div>
+	<div class="col-xs-3 cpu-utilization" uib-popover="({{'LB.MAX' | translate}} = {{instance.maxCpuUtilization}}%)"
+			 popover-placement="right" popover-trigger="mouseenter">
+		<i ng-if="instance.cpuUtilization === 0" class="glyphicon glyphicon-info-sign"></i>
+		<div class="inline-block">
+			<b>{{'LB.CPU_UTILIZATION' | translate}}:</b> {{instance.cpuUtilization | number:1}}%<br />
+			<span ng-if="instance.rate">
+				<b>{{'LB.RATE' | translate}}:</b> {{instance.rate | number:2}}% RPS
+		</span>
+		</div>
+	</div>
+	<div class="col-xs-2 no-padding">
+		<uib-progressbar animate="false" value="instance.cpuUtilization" type="success"
+										 uib-popover-template="'cpuUtilizationPop.html'" popover-placement="left"
+										 popover-trigger="mouseenter"></uib-progressbar>
+	</div>
+</div>

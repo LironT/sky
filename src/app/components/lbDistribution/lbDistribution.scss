@@ -1,0 +1,58 @@
+.popover{
+	border-radius: 0 !important;
+}
+
+.lb-distribution-row{
+	border-top: solid 1px $dark;
+	padding-top: 5px;
+	height: 100px;
+}
+
+$square-size: 12px;
+.lb-name-square{
+	width: $square-size;
+	height: $square-size;
+	padding: 1px;
+	display: inline-block;
+
+	&:after{
+		content: '';
+		display: block;
+		z-index: 9;
+		width: $square-size - 2;
+		height: $square-size - 2;
+		border: solid 1px white;
+		background-color: transparent;
+	}
+}
+
+.lb-distribution-container{
+	.lb-group-name{
+		text-align: right;
+		padding: 0 10px;
+	}
+
+	.lb-group-cureves{
+		width: 200px;
+	}
+
+	.lb-group-name-sep{
+		height: 50px;
+		border: solid 3px darkgreen;
+		border-radius: 5px;
+		position: relative;
+	}
+}
+
+$cureve-width: 350px;
+.lb-row-cureve {
+	position: relative;
+	display: inline-block;
+	width: 350px;
+	margin-right: 5px;
+}
+.lb-row-data{
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 370px);
+}

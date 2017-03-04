@@ -1,0 +1,13 @@
+.rps-container{
+	margin: 0 $margin-height;
+
+	h5 {
+		font-weight: bold;
+	}
+
+	.rps-chart{
+		display: block;
+		width: 100%;
+		border: solid 1px #d7d7d7;
+	}
+}

@@ -1,0 +1,22 @@
+<div class="row lb-distribution-container">
+
+	<div class="lb-row-cureve">
+		<b>{{'LB.FRONTEND_LOCATION' | translate}}</b>
+		<div>{{'LB.TOTAL_TRAFFIC' | translate}}</div>
+	</div>
+
+	<div class="lb-row-data margin-bottom">
+		<b>{{'LB.BACKEND' | translate}}</b>
+		<div>({{vm.lastUpdated}} {{'LB.MINUTES_AGO' | translate}})</div>
+	</div>
+
+	<br />
+	<lb-distribution ng-repeat="group in vm.data" group="group" max-rps="vm.maxRps"></lb-distribution>
+</div>
+
+<script type="text/ng-template" id="cpuUtilizationPop.html">
+	<div>
+		<b>{{instance.cpuUtilization | number:1}}</b> ({{'LB.MAX' | translate}} = {{instance.maxCpuUtilization | number:0}}%)<br/>
+		{{'LB.DRAINED_TO' | translate}} {{instance.drained | number:0}}%
+	</div>
+</script>

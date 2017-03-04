@@ -1,0 +1,41 @@
+.navbar-text{
+  color: white;
+}
+
+.navbar{
+  border-bottom: solid 1px $dark;
+}
+
+%selected-anchor{
+  color: blue;
+  border-bottom: solid 2px blue;
+  background-color: transparent;
+}
+
+.nav {
+  li {
+    &.active {
+      a {
+        @extend %selected-anchor;
+      }
+    }
+
+    a {
+      color: black;
+
+      &:hover, &:focus {
+        @extend %selected-anchor;
+      }
+    }
+  }
+}
+
+.app-name{
+	i.glyphicon-ok-sign{
+		color: limegreen;
+	}
+
+	i.glyphicon-trash{
+		top: 4px;
+	}
+}

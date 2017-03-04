@@ -1,0 +1,27 @@
+<div class="rps-container">
+	<div class="row">
+		<div class="col-xs-6 no-padding">
+			<h5 class="inline-block no-margin">{{'RPS.BACKEND' | translate}}</h5>
+
+			<div class="dropdown inline-block">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					{{'RPS.LB_NAME' | translate}}
+					<span class="caret"></span>
+				</button>
+			</div>
+		</div>
+		<div class="col-xs-6 no-padding">
+			<div class="btn-group pull-right">
+				<label class="btn btn-default" ng-repeat="time in vm.times"
+							 ng-disabled="true" ng-model="vm.selectedTime" uib-btn-radio="time.value">{{time.text}}</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="row chart-container margin-top">
+		<highchart class="rps-chart" config="vm.myStoreChartConfiguration"></highchart>
+	</div>
+
+	<br />
+	<lb-distribution-container data="vm.data"></lb-distribution-container>
+</div>

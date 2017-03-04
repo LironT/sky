@@ -1,0 +1,13 @@
+<svg class="lb-cureves"
+		 ng-attr-height="{{vm.blockSize * vm.series.length}}" width="200"
+		 ng-style="{'top': ((vm.series.length - 1) * -50- 30) + 'px'}">
+	<path class="cureve-sep" ng-attr-d="M0,{{vm.series.length * vm.blockSize / 2 - 30}} l0,0, 0,50"
+				stroke="#1DD27B"/>
+
+	<path ng-repeat="instace in vm.series"
+				ng-attr-d="M5,{{vm.series.length * 50}} c50,0, 50,{{($index) * vm.blockSize - (vm.blockSize / 2)}}, 200,{{$index * vm.blockSize - (50 * (vm.series.length - 1))}}"
+				stroke="aquamarine"
+				ng-attr-style="fill: none; stroke-width: {{instace.rate / vm.maxRps * 25}}px;">
+		<title>{{instace.rate}} RPS</title>
+	</path>
+</svg>
